@@ -1,0 +1,491 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: var(--white, #f3f2f0);
+  background-color: #f3f2f0;
+}
+
+/* NavBar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em 2em;
+  z-index: 1000;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(44, 38, 39, 0.2);
+  backdrop-filter: blur(10px);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+
+.logo {
+  cursor: pointer;
+  width: 1.5em;
+  height: auto;
+  max-width: 36px;
+}
+
+li,
+a,
+button {
+  color: var(--white, #f3f2f0);
+  font-family: "Instrument Serif";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 120% */
+  text-decoration: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-links li a {
+  transition: all 0.3s ease 0%;
+}
+
+.nav-links li a:hover {
+  color: rgba(243, 242, 240, 0.5);
+}
+
+button {
+  display: flex;
+  padding: 0.5em 1.875em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625em;
+
+  border-radius: 2.25em;
+  border: 0.125em solid #f3f2f0;
+
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(243, 242, 240, 0.5);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white, #f3f2f0);
+  margin: 0.2em 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links,
+  .cta {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+
+  li,
+  a,
+  button {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  button {
+    padding: 0.4em 1.5em;
+    font-size: 16px;
+    text-wrap: nowrap;
+  }
+
+  .nav-links li {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links,
+  .cta {
+    display: none;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .hamburger .bar {
+    width: 20px;
+    height: 2px;
+  }
+
+  li,
+  a,
+  button {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  button {
+    padding: 0.3em 1.2em;
+    font-size: 14px;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(44, 38, 39, 0.2);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    padding: 1em 0;
+    align-items: center;
+    gap: 1em;
+    z-index: 999;
+  }
+}
+
+/*Home*/
+.hero-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+}
+
+.hero-section {
+  min-height: 100vh;
+  height: auto;
+
+  margin: 0 auto;
+  position: relative;
+  background-image: url("Images/backgound-home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  padding-top: 2.5em;
+}
+
+@media (max-width: 1280px) {
+  .hero-section {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.hero-content h1 {
+  color: var(--white, #f3f2f0);
+  text-align: center;
+  text-shadow: 0px 4px 4px #000;
+  font-family: "Ibarra Real Nova";
+  font-size: clamp(
+    28px,
+    5vw,
+    44px
+  ); /* minimum 28px, ideal 5% dari viewport, maksimum 44px */
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.hero-caption {
+  display: flex;
+  align-items: center;
+  gap: clamp(1em, 5vw, 5em);
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  padding: 2em 2em;
+}
+
+@media (max-width: 600px) {
+  .hero-caption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+}
+
+.hero-content p {
+  color: var(--white, #f3f2f0);
+  text-shadow: 0px 4px 4px #000;
+  font-family: "Instrument Serif";
+  font-size: clamp(16px, 2vw, 20px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+}
+
+.hero-caption button {
+  border: 0.2px solid var(--white, #f3f2f0);
+  background: var(--white, #f3f2f0);
+
+  color: var(--black1, #2c2627);
+  text-wrap: nowrap;
+}
+
+.hero-caption button:hover {
+  background: rgba(243, 242, 240, 0.6);
+  border: 0.2px solid rgba(243, 242, 240, 0.6);
+
+  color: #f3f2f0;
+}
+
+/*ABOUT SECTION*/
+.about-intro {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+
+.about-intro-content {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.about-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  max-width: 1280px;
+  width: 100%;
+}
+
+.about-title h2 {
+  color: var(--black1, #2c2627);
+  font-family: "Ibarra Real Nova";
+  font-size: clamp(1.5rem, 4vw, 40px);
+  font-style: normal;
+  font-weight: 400;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+}
+.about-title-upper h2 {
+  display: flex;
+  gap: 0.3em;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.reviving-text {
+  font-style: italic;
+}
+
+.about-title-upper img {
+  height: 1.2em;
+  width: auto;
+  vertical-align: middle;
+}
+
+.about-text p {
+  max-width: 440px;
+  width: 100%;
+  height: auto;
+  text-wrap: wrap;
+
+  display: flex;
+
+  color: var(--black1, #2c2627);
+  text-align: right;
+  font-family: "Instrument Serif";
+  font-size: clamp(0.9rem, 2vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+
+  line-height: 1.25;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 62.5rem;
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  margin: 0 auto;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+@media (max-width: 780px) {
+  .about-text {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .about-text p {
+    text-align: justify;
+    max-width: 100%;
+    height: auto;
+  }
+}
+/**ABOUT PAGE**/
+.about-main {
+  width: 100%;
+  min-height: 1439px;
+  flex-shrink: 0;
+
+  margin: 0 auto;
+  position: relative;
+
+  background-image: url("Images/about-main-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-gallery-name {
+  color: #a5713d;
+  font-family: "Ibarra Real Nova";
+  font-size: 120px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 150px; /* 125% */
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ag-n1 {
+  margin-left: 160px;
+  margin-top: 98px;
+  margin-bottom: 0;
+}
+
+.ag-n2 {
+  margin-left: 200px;
+  margin-top: 0;
+}
+
+.about-main-text {
+  width: 1004px;
+  height: 368px;
+
+  margin: auto;
+}
+.about-main-subtitle {
+  color: #fff;
+  font-family: "Instrument Serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  width: 345px;
+  margin-top: 452px;
+}
+
+.about-paragraph {
+  margin-left: 512px;
+}
+
+.mission,
+.vissions {
+  width: 494px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 72px;
+}
+
+.about-paragraph h3 {
+  color: #fff;
+  font-family: "Instrument Serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 100% */
+}
+
+.about-paragraph p {
+  color: #fff;
+  text-align: right;
+  font-family: "Instrument Serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  width: 321px;
+}
+
+.about-paragraph ul {
+  color: #fff;
+  font-family: "Instrument Serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  width: 321px;
+}

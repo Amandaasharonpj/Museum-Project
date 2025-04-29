@@ -1,0 +1,179 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Website Title Tab-->
+    <title>Galleria Rinascita</title>
+    <link rel="icon" type="image/png" href="Images/logo.png" />
+
+    <!--Font : Ibarra Nova -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Font : Instrument Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar">
+      <div class="nav-container">
+        <!--Logo-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 34 34"
+          fill="none"
+          class="logo"
+        >
+          <rect x="3" width="12.4444" height="34" fill="#F3F2F0" />
+          <ellipse
+            cx="23.6115"
+            cy="7.17778"
+            rx="7.38889"
+            ry="7.17778"
+            fill="#F3F2F0"
+          />
+        </svg>
+
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#collection">Collections</a></li>
+        </ul>
+
+        <a href="#contact" class="cta"><button>Message Us</button></a>
+
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!--Home-->
+    <section class="hero-wrapper" id="home">
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1>A Journey Through Renaissance Splendor</h1>
+          <div class="hero-caption">
+            <p>
+              Step into an era where art bloomed, minds awakened, and beauty
+              found its voice in brushstrokes.<br />
+              Welcome to Galleria Rinascita — where the past lives on.
+            </p>
+            <a href="#collection" class="cta-collection"
+              ><button>Discover the Collection</button></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--About Section-->
+    <section class="about-section" id="about">
+      <div class="about-intro">
+        <div class="about-intro-content">
+          <div class="about-text">
+            <div class="about-title">
+              <div class="about-title-upper">
+                <h2>
+                  <span class="reviving-text">Reviving</span> the
+                  <span class="reviving-img">
+                    <img src="Images/reviving-image.png" alt="" />
+                  </span>
+                </h2>
+              </div>
+              <div class="about-title-under">
+                <h2>Golden Age of Art</h2>
+              </div>
+            </div>
+            <p>
+              Galleria Rinascita is a tribute to the cultural rebirth that
+              shaped the course of history. Our curated space invites you to
+              explore the timeless brilliance of Renaissance masters from the
+              divine to the dramatic, the celestial to the human.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="images/about-image.png" alt="Gallery Interior" />
+          </div>
+        </div>
+      </div>
+      <div class="about-main">
+        <div class="about-main-content">
+          <div class="about-gallery-name">
+            <p class="ag-n1">Galleria</p>
+            <p class="ag-n2">Rinascita</p>
+          </div>
+        </div>
+        <div class="about-main-text">
+          <div class="about-main-subtitle">
+            <p>
+              More than a museum, we are a portal to the 14th–17th centuries,
+              echoing with the legacies of da Vinci, Michelangelo, and their
+              contemporaries. Let each piece whisper the stories of genius, faith,
+              and the eternal pursuit of beauty.
+            </p>
+          </div>
+          <div class="about-paragraph">
+            <div class="mission">
+              <h3>Our Mission :</h3>
+              <p>
+                To rekindle the spirit of the Renaissance — a time when
+                creativity, curiosity, and craftsmanship flourished — and to
+                inspire future generations through the profound beauty and wisdom
+                of classical art.
+              </p>
+            </div>
+            <div class="vissions">
+              <h3>Our Vision :</h3>
+              <ul>
+                <li>
+                  To cultivate appreciation for the ideals of humanism, balance,
+                  and innovation.
+                </li>
+                <li>
+                  To create a bridge between past and present, offering
+                  experiences that educate, enchant, and elevate.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>        
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 10) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
